@@ -1,42 +1,49 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet } from 'react-native';
-import { GluestackUIProvider, Text, Box } from "@gluestack-ui/themed"
+import { StyleSheet, View} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { GluestackUIProvider, Box, Text  } from '@gluestack-ui/themed';
 import { config } from "@gluestack-ui/config"
-import { LinearGradient } from 'expo-linear-gradient';
-import Example from './component/example';
+import SplashScreen from './pages/SplashScreen';
+import Register from './pages/Register';
+import Home from './pages/Home';
+import Main from './pages/Main';
 
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
     <GluestackUIProvider config={config}>
-      <Box style={styles.container}>
-        <LinearGradient
-          colors={['#48B8E9', '#48B8E9', '#BDCDD4']}
-          style={styles.container} 
-        >
-          <Text style={styles.text}>Open up App.js to start working on your app!</Text>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Splashscreen" component={SplashScreen} options={{ headerShown: false }}
+          />
 
-          <Text style={styles.text}>Open up App.js to start working on your app!</Text>
+          <Stack.Screen
+            name="Register" component={Register} options={{ headerShown: false }}
+          />
 
-          <Example />
+          <Stack.Screen
+            name="Home" component={Home} options={{ headerShown: false }}
+          />
 
-        </LinearGradient>
-      </Box>
-
-      <StatusBar style="auto" />
+          {/* <Stack.Screen
+            name="Home"
+            options={{
+              children: <Main><Home /></Main>
+            }}
+          /> */}
+        </Stack.Navigator>
+      </NavigationContainer>
     </GluestackUIProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     height: '100%',
-    width: '100%',
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    color: 'black',
+    width: '100%'
   },
 });
