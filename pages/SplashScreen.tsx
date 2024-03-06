@@ -33,12 +33,8 @@ const SplashScreen = ({ navigation }) => {
                             borderRadius={50}
                             onPress={() => navigation.navigate('Register')}
                         >
-                            {/* <ButtonIcon as={googleIcon} /> */}
                             <Image source={googleIcon} alt={'googleIcon'} objectFit='contain' width={20} height={20} marginRight={10} />
                             <ButtonText color='$black'>Continue with google</ButtonText>
-                            {/* <Text>
-                                Sign in with google
-                            </Text> */}
                         </Button>
 
                         <Text size='xs' marginTop={100} color='$white'>

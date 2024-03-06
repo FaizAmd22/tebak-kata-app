@@ -1,8 +1,9 @@
-import { Box, Text, Image, Button, ButtonText } from '@gluestack-ui/themed';
+import { Box, Text, Image, Button, ButtonText, Avatar, AvatarBadge, AvatarFallbackText, AvatarImage } from '@gluestack-ui/themed';
 import { StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 const logo = require('../assets/logo2.png')
 const diamond = require('../assets/diamond.png')
+const avatar = require('../assets/avatar.png')
 
 const Home = ({ navigation }) => {
     return ( 
@@ -20,18 +21,39 @@ const Home = ({ navigation }) => {
                         <ButtonText color='$black' fontWeight={'bold'}>50</ButtonText>
                     </Box>
 
-                    <Button width={15} height={26} margin='auto'>
-                        <ButtonText color='$black' fontWeight={'bold'}>+</ButtonText>
+                    <Button size={'xs'} height={28} display='flex' bg='#0ACF83' borderWidth={1} borderColor={'#018b56'}>
+                        <ButtonText color='$black' fontWeight={'semibold'} size='xl'>+</ButtonText>
                     </Button>
                 </Box>
             </Box>
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <Button
                     bg={'$white'}
-                    borderRadius={50}
+                    borderRadius={'$full'}
+                    h={150}
+                    w={150}
                     onPress={() => navigation.navigate('Home')}
                 >
-                    <ButtonText color='$black'>50</ButtonText>
+                    <Avatar>
+                        <AvatarFallbackText>Ronald Richards</AvatarFallbackText>
+                        <AvatarImage
+                            source={avatar}
+                            alt={"avatar user"}
+                            w={140}
+                            h={140}
+                            objectFit="cover"
+                        />
+                    </Avatar>
+                </Button>
+
+                <Text size='xl' color='$white' marginTop={5}>
+                    Spideysheree
+                </Text>
+
+                <Button bg={'#0ACF83'} borderWidth={1} borderColor={'#018b56'} marginTop={100} marginBottom={-80}>
+                    <ButtonText textTransform='uppercase' size='xl'>
+                        start game
+                    </ButtonText>
                 </Button>
             </View>
         </LinearGradient>

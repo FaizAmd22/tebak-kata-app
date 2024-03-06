@@ -9,9 +9,6 @@ const Register = ({navigation}) => {
             colors={['#48B8E9', '#48B8E9', '#BDCDD4']}
             style={styles.container} 
         >
-            {/* <Box>
-                <Image />
-            </Box> */}
             <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
                 <Button
                     bg={'$white'}

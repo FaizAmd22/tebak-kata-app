@@ -6,7 +6,6 @@ import { config } from "@gluestack-ui/config"
 import SplashScreen from './pages/SplashScreen';
 import Register from './pages/Register';
 import Home from './pages/Home';
-import Main from './pages/Main';
 
 
 const Stack = createNativeStackNavigator();
