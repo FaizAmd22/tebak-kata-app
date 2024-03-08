@@ -1,9 +1,9 @@
-import { Box, Text, Image, Button } from '@gluestack-ui/themed';
+import { Text, Button } from '@gluestack-ui/themed';
 import { StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
-const logo = require('../assets/logo.png')
+import { NavigateProps } from '../types/navigationType';
 
-const Register = ({navigation}) => {
+const Register = ({ navigation }: NavigateProps) => {
     return ( 
         <LinearGradient
             colors={['#48B8E9', '#48B8E9', '#BDCDD4']}

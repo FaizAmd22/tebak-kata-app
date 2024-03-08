@@ -1,11 +1,12 @@
 import { Box, Text, Image, Button, ButtonText, Avatar, AvatarBadge, AvatarFallbackText, AvatarImage } from '@gluestack-ui/themed';
 import { StyleSheet, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
+import { NavigateProps } from '../types/navigationType';
 const logo = require('../assets/logo2.png')
 const diamond = require('../assets/diamond.png')
 const avatar = require('../assets/avatar.png')
 
-const Home = ({ navigation }) => {
+const Home = ({ navigation }: NavigateProps) => {
     return ( 
         <LinearGradient
             colors={['#48B8E9', '#48B8E9', '#BDCDD4']}
